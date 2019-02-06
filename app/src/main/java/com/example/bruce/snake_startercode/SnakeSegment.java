@@ -4,6 +4,8 @@ public class SnakeSegment
 {
     private BodyParts mBodyParts;
     private int mDegrees, mXLoc, mYLoc;
+    private int [] mAppleCoord;
+    private boolean mGameOver = false;
     protected enum BodyParts {HEAD, BODY, TAIL};
 
     public SnakeSegment(int degrees, BodyParts bodyParts, int XLoc, int YLoc)
@@ -14,7 +16,7 @@ public class SnakeSegment
         mYLoc = YLoc;
     }
 
-    public BodyParts getBodyParts() {
+    public BodyParts getBodyPart() {
         return mBodyParts;
     }
 

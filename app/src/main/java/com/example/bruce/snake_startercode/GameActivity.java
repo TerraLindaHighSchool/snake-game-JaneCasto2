@@ -19,6 +19,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import static com.example.bruce.snake_startercode.SnakeSegment.BodyParts.BODY;
+import static com.example.bruce.snake_startercode.SnakeSegment.BodyParts.HEAD;
+import static com.example.bruce.snake_startercode.SnakeSegment.BodyParts.TAIL;
+
 public class GameActivity extends AppCompatActivity{
     private int mBOARD_WIDTH, mBOARD_HEIGHT;
     private SnakeGame mGame;

@@ -16,7 +16,7 @@ public class SnakeSegment
         mYLoc = YLoc;
     }
 
-    public BodyParts getBodyPart() {
+    public BodyParts getBodyParts() {
         return mBodyParts;
     }
 

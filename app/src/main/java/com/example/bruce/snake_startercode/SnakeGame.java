@@ -94,14 +94,35 @@ public class SnakeGame {
     }
 
 
-    protected void eatApple() {
+    protected void growSnake(){
+        SnakeSegment segment = mSnake.get(mSnake.size() - 1);
+        mSnake.add(mSnake.size() - 2, new SnakeSegment(segment.getDegrees(), SnakeSegment.BodyParts.BODY, segment.getXLoc(), segment.getYLoc()));
+        switch(segment.getDegrees()) {
+            case 0:
+                segment.setXLoc(segment.getXLoc() - 1);
+                break;
+            case 180:
+                segment.setXLoc(segment.getXLoc() + 1);
+                break;
+            case 90:
+                segment.setYLoc(segment.getYLoc() - 1);
+                break;
+            case 270:
+                segment.setYLoc(segment.getYLoc() + 1);
+                break;
+            }
+        }
 
-  }
+    protected void eatApple() {
+      if((mSnake.get(0).getXLoc() * mSpriteDim == mAppleCoord[0]) && (mSnake.get(0).getYLoc() * mSpriteDim == mAppleCoord[1])){
+          setAppleCoord();
+          growSnake();
+        }
+     }
 
   protected boolean play() {
 
-      // declare variables
-
+      eatApple();
       for (int segment = 0; segment < mSnake.size(); segment++) {
 
           int XLoc = mSnake.get(segment).getXLoc();
